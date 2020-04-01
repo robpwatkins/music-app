@@ -9,14 +9,14 @@ function Dashboard (props) {
     return (
       <div style={{maxWidth: '850px', margin: '25px'}}>
         <h2 style={{color: 'gray'}}>Welcome, User!</h2>
-        <Grid container direction="row" spacing={6}>
-          <Grid item xs={12} sm={4}>
+        <Grid container direction="row" spacing={6} justify="center">
+          <Grid item xs={8} sm={4}>
             <OnlineCard />
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={8} sm={4}>
             <VolumeCard />
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={8} sm={4}>
             <SoundCard />
           </Grid>
         </Grid>

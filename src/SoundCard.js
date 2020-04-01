@@ -20,7 +20,7 @@ class SoundCard extends React.Component {
 
   render () {
     return (
-      <Card style={{padding: '10px'}}>
+      <Card style={{padding: '10px', paddingBottom: '0'}}>
         <CardHeader title="Sound Quality" />
         <CardContent>
           <Typography variant="body1">
@@ -29,7 +29,6 @@ class SoundCard extends React.Component {
         </CardContent>
         <CardActions>
           <FormControl fullWidth>
-            <InputLabel></InputLabel>
             <Select onChange={this.handleChange} value={this.state.quality}>
               <MenuItem value={1}>Low</MenuItem>
               <MenuItem value={2}>Normal</MenuItem>

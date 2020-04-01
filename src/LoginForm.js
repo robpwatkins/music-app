@@ -8,17 +8,14 @@ function LoginForm (props) {
       <div style={{width: '35%', paddingTop: '55px'}}>
         <form onSubmit={event => props.onlogin(event)}>
           <Input 
-            onChange={event => props.updateusername(event)}
             fullWidth 
             placeholder="Username *"
-            value={props.username}
             ></Input>
           <br/>
-          <Input fullWidth placeholder="Password *"></Input>
+          <Input type="password" fullWidth placeholder="Password *"></Input>
           <br/>
           <Button 
             type="submit" 
-            value="Submit" 
             style={{marginTop: '15px'}} 
             fullWidth 
             color="primary" 
