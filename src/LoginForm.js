@@ -4,7 +4,7 @@ import Textfield from '@material-ui/core/TextField';
 
 function LoginForm () {
   return (
-    <div style={{paddingTop: '55px'}}>
+    <div style={{width: '35%', paddingTop: '55px'}}>
       <Textfield fullWidth placeholder="Username *">Heyoo</Textfield>
       <br/>
       <Textfield fullWidth placeholder="Password *">Heyoo</Textfield>
