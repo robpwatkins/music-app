@@ -10,7 +10,7 @@ import Switch from '@material-ui/core/Switch';
 function OnlineCard () {
 
   return (
-    <Card>
+    <Card style={{padding: '10px'}}>
       <CardHeader title="Online Mode" />
       <CardContent>
         <Typography variant="body1">

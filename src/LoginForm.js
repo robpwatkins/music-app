@@ -1,17 +1,32 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import Textfield from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
 
-function LoginForm () {
-  return (
-    <div style={{width: '35%', paddingTop: '55px'}}>
-      <Textfield fullWidth placeholder="Username *">Heyoo</Textfield>
-      <br/>
-      <Textfield fullWidth placeholder="Password *">Heyoo</Textfield>
-      <br/>
-      <Button style={{marginTop: '15px'}} fullWidth color="primary" variant="contained" >LOGIN</Button>
-    </div>
-  )
+function LoginForm (props) {
+  if (!props.loggedin) {
+    return (
+      <div style={{width: '35%', paddingTop: '55px'}}>
+        <form onSubmit={event => props.onlogin(event)}>
+          <Input fullWidth placeholder="Username *"></Input>
+          <br/>
+          <Input fullWidth placeholder="Password *"></Input>
+          <br/>
+          <Button 
+            type="submit" 
+            value="Submit" 
+            style={{marginTop: '15px'}} 
+            fullWidth 
+            color="primary" 
+            variant="contained"
+            >
+            Submit
+          </Button>
+        </form>
+      </div>
+    )
+  } else {
+    return null;
+  }
 }
 
 export default LoginForm;

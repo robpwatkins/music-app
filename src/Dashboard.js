@@ -4,24 +4,28 @@ import VolumeCard from './VolumCard';
 import SoundCard from './SoundCard';
 import { Grid } from '@material-ui/core';
 
-function Dashboard () {
-  return (
-    <div style={{width: '65%'}}>
-      <h2 style={{color: 'gray'}}>Welcome, User!</h2>
-      <Grid container direction="row" spacing={2}>
-        <Grid item xs={12} sm={4}>
-          <OnlineCard />
+function Dashboard (props) {
+  if (props.loggedin) {
+    return (
+      <div style={{maxWidth: '850px', margin: '25px'}}>
+        <h2 style={{color: 'gray'}}>Welcome, User!</h2>
+        <Grid container direction="row" spacing={6}>
+          <Grid item xs={12} sm={4}>
+            <OnlineCard />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <VolumeCard />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <SoundCard />
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={4}>
-          <VolumeCard />
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <SoundCard />
-        </Grid>
-      </Grid>
-      <h3>System notifications:</h3>
-    </div>
-  )
+        <h3>System notifications:</h3>
+      </div>
+    )
+  } else {
+    return null;
+  }
 }
 
 export default Dashboard;

@@ -9,7 +9,7 @@ import Slider from '@material-ui/core/Slider';
 function VolumeCard () {
 
   return (
-    <Card>
+    <Card style={{padding: '10px'}}>
       <CardHeader title="Master Volume" />
       <CardContent>
         <Typography variant="body1">
