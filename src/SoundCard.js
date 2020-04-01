@@ -9,28 +9,37 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-function SoundCard () {
+class SoundCard extends React.Component {
+  state = {
+    quality: 2
+  }
 
-  return (
-    <Card>
-      <CardHeader title="Sound Quality" />
-      <CardContent>
-        <Typography variant="body1">
-          Manually control the music quality in the event of poor connection
-        </Typography>
-      </CardContent>
-      <CardActions>
-      <FormControl fullWidth>
-        <InputLabel>Quality:</InputLabel>
-        <Select value="">
-          <MenuItem value={1}>Low</MenuItem>
-          <MenuItem value={2}>Normal</MenuItem>
-          <MenuItem value={3}>High</MenuItem>
-        </Select>
-      </FormControl>
-      </CardActions>
-    </Card>
-  );
+  handleChange = event => {
+    this.setState({ quality: event.target.value })
+  }
+
+  render () {
+    return (
+      <Card>
+        <CardHeader title="Sound Quality" />
+        <CardContent>
+          <Typography variant="body1">
+            Manually control the music quality in the event of poor connection
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <FormControl fullWidth>
+            <InputLabel>Quality:</InputLabel>
+            <Select onChange={this.handleChange} value={this.state.quality}>
+              <MenuItem value={1}>Low</MenuItem>
+              <MenuItem value={2}>Normal</MenuItem>
+              <MenuItem value={3}>High</MenuItem>
+            </Select>
+          </FormControl>
+        </CardActions>
+      </Card>
+    );
+  }
 }
 
 export default SoundCard;
