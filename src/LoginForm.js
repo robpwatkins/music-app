@@ -7,7 +7,12 @@ function LoginForm (props) {
     return (
       <div style={{width: '35%', paddingTop: '55px'}}>
         <form onSubmit={event => props.onlogin(event)}>
-          <Input fullWidth placeholder="Username *"></Input>
+          <Input 
+            onChange={event => props.updateusername(event)}
+            fullWidth 
+            placeholder="Username *"
+            value={props.username}
+            ></Input>
           <br/>
           <Input fullWidth placeholder="Password *"></Input>
           <br/>

@@ -11,16 +11,22 @@ class App extends React.Component {
 
   onLogin = props => {
     props.preventDefault();
-    this.setState({ loggedIn: true });
-    console.log(this.state.loggedIn);
+    this.setState({ 
+      loggedIn: true
+     });
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <LoginForm onlogin={this.onLogin} loggedin={this.state.loggedIn} />
-        <Dashboard loggedin={this.state.loggedIn} />
+        <LoginForm 
+          onlogin={this.onLogin} 
+          loggedin={this.state.loggedIn}
+        />
+        <Dashboard 
+          loggedin={this.state.loggedIn}
+        />
       </div>
     );
   }
