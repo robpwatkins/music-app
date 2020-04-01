@@ -2,11 +2,12 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
-import ShareIcon from '@material-ui/icons/Share';
-import IconButton from '@material-ui/core/IconButton';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 function SoundCard () {
 
@@ -14,12 +15,19 @@ function SoundCard () {
     <Card>
       <CardHeader title="Sound Quality" />
       <CardContent>
-        <Typography variant="p">
+        <Typography variant="body1">
           Manually control the music quality in the event of poor connection
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">dropdown</Button>
+      <FormControl fullWidth>
+        <InputLabel>Quality:</InputLabel>
+        <Select value="">
+          <MenuItem value={1}>Low</MenuItem>
+          <MenuItem value={2}>Normal</MenuItem>
+          <MenuItem value={3}>High</MenuItem>
+        </Select>
+      </FormControl>
       </CardActions>
     </Card>
   );

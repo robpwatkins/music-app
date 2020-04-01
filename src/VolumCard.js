@@ -2,11 +2,9 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
-import ShareIcon from '@material-ui/icons/Share';
-import IconButton from '@material-ui/core/IconButton';
+import Slider from '@material-ui/core/Slider';
 
 function VolumeCard () {
 
@@ -14,12 +12,21 @@ function VolumeCard () {
     <Card>
       <CardHeader title="Master Volume" />
       <CardContent>
-        <Typography variant="p">
+        <Typography variant="body1">
           Overrides all other sound settings in this application
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">volume slider</Button>
+      <Slider
+        defaultValue={30}
+        // getAriaValueText={valuetext}
+        aria-labelledby="discrete-slider"
+        valueLabelDisplay="auto"
+        step={10}
+        marks
+        min={0}
+        max={100}
+      />
       </CardActions>
     </Card>
   );
