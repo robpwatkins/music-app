@@ -20,13 +20,17 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <LoginForm 
+        {this.state.loggedIn ||
+          <LoginForm 
           onlogin={this.onLogin} 
           loggedin={this.state.loggedIn}
-        />
-        <Dashboard 
+          />
+        }
+        {this.state.loggedIn &&
+          <Dashboard 
           loggedin={this.state.loggedIn}
-        />
+          />
+        }
       </div>
     );
   }

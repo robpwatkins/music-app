@@ -3,7 +3,6 @@ import { Button } from '@material-ui/core';
 import Input from '@material-ui/core/Input';
 
 function LoginForm (props) {
-  if (!props.loggedin) {
     return (
       <div style={{width: '35%', paddingTop: '55px'}}>
         <form onSubmit={event => props.onlogin(event)}>
@@ -26,9 +25,6 @@ function LoginForm (props) {
         </form>
       </div>
     )
-  } else {
-    return null;
-  }
 }
 
 export default LoginForm;
