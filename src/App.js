@@ -6,14 +6,20 @@ import Dashboard from './Dashboard';
 
 class App extends React.Component {
   state = {
-    loggedIn: false
+    loggedIn: false,
+    username: ''
   }
 
   onLogin = props => {
     props.preventDefault();
     this.setState({ 
-      loggedIn: true
+      loggedIn: true,
+      username: props.target.value
      });
+  }
+
+  updateUsername = props => {
+    this.setState({ username: props.target.value });
   }
 
   render() {
@@ -24,11 +30,13 @@ class App extends React.Component {
           <LoginForm 
           onlogin={this.onLogin} 
           loggedin={this.state.loggedIn}
+          updateusername={this.updateUsername}
           />
         }
         {this.state.loggedIn &&
           <Dashboard 
           loggedin={this.state.loggedIn}
+          username={this.state.username}
           />
         }
       </div>

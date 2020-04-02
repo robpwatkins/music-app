@@ -4,7 +4,8 @@ import VolumeCard from './VolumCard';
 import SoundCard from './SoundCard';
 import { Grid } from '@material-ui/core';
 
-function Dashboard (props) {
+class Dashboard extends React.Component {
+  render() {
     return (
       <div style={{maxWidth: '850px', margin: '25px'}}>
         <h2 style={{color: 'gray'}}>Welcome, User!</h2>
@@ -22,6 +23,7 @@ function Dashboard (props) {
         <h3>System notifications:</h3>
       </div>
     )
+  }
 }
 
 export default Dashboard;
