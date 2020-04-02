@@ -9,17 +9,16 @@ import Slider from '@material-ui/core/Slider';
 function VolumeCard () {
 
   return (
-    <Card style={{padding: '10px'}}>
-      <CardHeader title="Master Volume" />
+    <Card style={{padding: '10px 0px 13px 0px '}}>
+      <CardHeader title="Master Volume" style={{paddingBottom: '0'}} />
       <CardContent>
-        <Typography variant="body1">
+        <Typography variant="body1" style={{marginBottom: '25px'}}>
           Overrides all other sound settings in this application
         </Typography>
       </CardContent>
       <CardActions>
       <Slider
         defaultValue={30}
-        // getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
         step={10}

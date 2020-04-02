@@ -10,15 +10,16 @@ import Switch from '@material-ui/core/Switch';
 function OnlineCard () {
 
   return (
-    <Card style={{padding: '10px'}}>
-      <CardHeader title="Online Mode" />
+    <Card style={{padding: '10px 0px 3px 0px'}}>
+      <CardHeader title="Online Mode" style={{paddingBottom: '0'}}/>
       <CardContent>
-        <Typography variant="body1">
+        <Typography variant="body1" style={{marginBottom: '25px'}}>
           Is this application connected to the internet?
         </Typography>
       </CardContent>
       <CardActions>
         <FormControlLabel
+          style={{paddingLeft: '5px'}}
           control={
             <Switch />
           }

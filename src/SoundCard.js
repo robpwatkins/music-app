@@ -4,7 +4,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -20,8 +19,8 @@ class SoundCard extends React.Component {
 
   render () {
     return (
-      <Card style={{padding: '10px', paddingBottom: '0'}}>
-        <CardHeader title="Sound Quality" />
+      <Card style={{padding: '10px 0px'}}>
+        <CardHeader title="Sound Quality" style={{paddingBottom: '0'}} />
         <CardContent>
           <Typography variant="body1">
             Manually control the music quality in the event of poor connection
