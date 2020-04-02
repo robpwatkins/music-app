@@ -9,7 +9,7 @@ function Dashboard (props) {
     return (
       <div style={{maxWidth: '850px', margin: '25px'}}>
         <h2 style={{color: 'gray'}}>Welcome, User!</h2>
-        <Grid container direction="row" spacing={6} justify="center" style={{padding: '15px'}}>
+        <Grid container direction="row" spacing={6} justify="center" style={{padding: '10px'}}>
           <Grid item xs={8} sm={4}>
             <OnlineCard />
           </Grid>
