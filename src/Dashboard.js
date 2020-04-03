@@ -15,25 +15,38 @@ class Dashboard extends React.Component {
 
   toggleSwitch = () => {
     this.setState({ online: !this.state.online });
-    console.log(`online: ${this.state.online}`);
   }
 
   volumeChange = (props) => {
-    console.log(`Volume: ${props}`);
+    this.setState(({ volume: props }), () => {
+      this.state.volume >= 80 && 
+      this.setState({
+        notifications: [...this.state.notifications, 
+          // "Listening to music at a high volume could cause long-term hearing loss."]
+          "Too loud!"]
+      });
+    })
   }
 
   dropdownChange = props => {
     this.setState(( {soundQuality: props }), () => {
-      console.log(`Sound Quality: ${this.state.soundQuality}`);
+      this.state.soundQuality === 1 &&
+      this.setState({
+        notifications: [...this.state.notifications,
+        // "Music quality is degraded. Increase quality if your connection allows it."]
+        "Increase quality!"]
+      })
     })
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (!prevState.online && this.state.online) {
-      this.setState(( {notifications: [...this.state.notifications, 'Offline!'] }), () => {
-      });
-      console.log(this.state.notifications);
-    }
+    !prevState.online && 
+    this.state.online && 
+    this.setState({
+        notifications: [...this.state.notifications,
+        //  "Your application is offline. You won't be able to share or stream music to other devices."]
+        "You're offline!"] 
+    });
   }
 
   render() {
@@ -52,7 +65,7 @@ class Dashboard extends React.Component {
           </Grid>
         </Grid>
         <h3>System notifications:</h3>
-        <Notifications />
+        <Notifications notifications={this.state.notifications}/>
       </div>
     )
   }

@@ -2,7 +2,15 @@ import React from 'react';
 
 function Notifications (props) {
   return (
-    <h3>Notifications here.</h3>
+    <div>
+      {props.notifications.map((notification, i) => {
+        return (
+          <div key={i}>
+            <h5>{notification}</h5>
+          </div>
+        )
+      })}
+    </div>
   )
 }
 
