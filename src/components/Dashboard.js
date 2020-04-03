@@ -25,25 +25,23 @@ class Dashboard extends React.Component {
   }
 
   volumeChange = level => {
-    this.setState(({ volume: level }), () => {
-      this.state.volume >= 80 && 
-      this.setState({
-        notifications: [...this.state.notifications, 
-          // "Listening to music at a high volume could cause long-term hearing loss."]
-          "It's too loud!"]
-      });
+    level >= 80 && 
+    this.setState({
+      notifications: [...this.state.notifications, 
+        // "Listening to music at a high volume could cause long-term hearing loss."]
+        "It's too loud!"]
     })
+    this.setState({ volume: level });
   }
 
   dropdownChange = quality => {
-    this.setState(({ soundQuality: quality }), () => {
-      this.state.soundQuality === 1 &&
-      this.setState({
-        notifications: [...this.state.notifications,
+    quality === 1 &&
+    this.setState({
+      notifications: [...this.state.notifications,
         // "Music quality is degraded. Increase quality if your connection allows it."]
         "NO!"]
-      })
     })
+      this.setState({ soundQuality: quality });
   }
 
   render() {
