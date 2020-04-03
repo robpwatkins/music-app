@@ -21,9 +21,7 @@ class App extends React.Component {
       <div className="App">
         <Header />
         {!this.state.loggedIn ? (
-          <LoginForm 
-          onLogin={this.onLogin} 
-          />
+          <LoginForm onLogin={this.onLogin} />
         ):(
           <Dashboard />
         )}

@@ -14,7 +14,14 @@ class Dashboard extends React.Component {
   }
 
   toggleSwitch = () => {
-    this.setState({ online: !this.state.online });
+    const isOnline = this.state.online;
+    this.setState({ online: !isOnline });
+    !this.state.online &&
+    this.setState({
+      notifications: [...this.state.notifications,
+      //  "Your application is offline. You won't be able to share or stream music to other devices."]
+      "Get online!"] 
+  });
   }
 
   volumeChange = level => {
@@ -34,19 +41,9 @@ class Dashboard extends React.Component {
       this.setState({
         notifications: [...this.state.notifications,
         // "Music quality is degraded. Increase quality if your connection allows it."]
-        "Increase that quality!"]
+        "NO!"]
       })
     })
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    !prevState.online && 
-    this.state.online && 
-    this.setState({
-        notifications: [...this.state.notifications,
-        //  "Your application is offline. You won't be able to share or stream music to other devices."]
-        "Get online!"] 
-    });
   }
 
   render() {
