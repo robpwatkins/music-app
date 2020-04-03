@@ -17,8 +17,8 @@ class Dashboard extends React.Component {
     this.setState({ online: !this.state.online });
   }
 
-  volumeChange = (props) => {
-    this.setState(({ volume: props }), () => {
+  volumeChange = level => {
+    this.setState(({ volume: level }), () => {
       this.state.volume >= 80 && 
       this.setState({
         notifications: [...this.state.notifications, 
@@ -28,8 +28,8 @@ class Dashboard extends React.Component {
     })
   }
 
-  dropdownChange = props => {
-    this.setState(({ soundQuality: props }), () => {
+  dropdownChange = quality => {
+    this.setState(({ soundQuality: quality }), () => {
       this.state.soundQuality === 1 &&
       this.setState({
         notifications: [...this.state.notifications,
