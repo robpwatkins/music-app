@@ -14,14 +14,14 @@ class Dashboard extends React.Component {
   }
 
   toggleSwitch = () => {
-    const isOnline = this.state.online;
-    this.setState({ online: !isOnline });
-    !this.state.online &&
+    const notOnline = !this.state.online;
+    notOnline &&
     this.setState({
       notifications: [...this.state.notifications,
-      //  "Your application is offline. You won't be able to share or stream music to other devices."]
-      "Get online!"] 
-  });
+        //  "Your application is offline. You won't be able to share or stream music to other devices."]
+        "Get online!"] 
+    });
+    this.setState({ online: notOnline });
   }
 
   volumeChange = level => {
@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
       notifications: [...this.state.notifications, 
         // "Listening to music at a high volume could cause long-term hearing loss."]
         "It's too loud!"]
-    })
+    });
     this.setState({ volume: level });
   }
 
@@ -40,15 +40,20 @@ class Dashboard extends React.Component {
       notifications: [...this.state.notifications,
         // "Music quality is degraded. Increase quality if your connection allows it."]
         "NO!"]
-    })
-      this.setState({ soundQuality: quality });
+    });
+    this.setState({ soundQuality: quality });
   }
 
   render() {
     return (
       <div style={{maxWidth: '850px', margin: '25px'}}>
         <h2 style={{color: 'gray'}}>Welcome, User!</h2>
-        <Grid container direction="row" spacing={6} justify="center" style={{padding: '10px'}}>
+        <Grid 
+          container 
+          direction="row" 
+          spacing={6} 
+          justify="center" 
+          style={{padding: '10px'}}>
           <Grid item xs={8} sm={4}>
             <OnlineCard toggleSwitch={this.toggleSwitch}/>
           </Grid>
