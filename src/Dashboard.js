@@ -13,17 +13,18 @@ class Dashboard extends React.Component {
 
   toggleSwitch = () => {
     this.setState({ online: !this.state.online });
+    console.log(`online: ${this.state.online}`);
   }
 
   volumeChange = (props) => {
-    console.log(props);
+    console.log(`Volume: ${props}`);
   }
 
   dropdownChange = props => {
-    this.setState({ soundQuality: props.target.value })
-    if (this.state.soundQuality === 3) {
-      console.log('heyoo');
-    }
+    console.log(`props: ${props}`);
+    // const quality = props.target.value;
+    this.setState({ soundQuality: props })
+    console.log(`Sound Quality: ${this.state.soundQuality}`);
   }
 
   render() {
