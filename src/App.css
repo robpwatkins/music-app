@@ -4,3 +4,17 @@
   justify-content: center;
   align-items: center;
 }
+
+.scrollBox {
+  height: 25vh;
+  overflow: scroll;
+}
+
+.notificationContainer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+h5 {
+  margin-bottom: 0px;
+}
