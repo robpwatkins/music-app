@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import Slider from '@material-ui/core/Slider';
 
-function VolumeCard () {
+function VolumeCard (props) {
 
   return (
     <Card style={{padding: '10px 0px 13px 0px '}}>
@@ -18,6 +18,7 @@ function VolumeCard () {
       </CardContent>
       <CardActions>
       <Slider
+        onChange={(event, value) => props.volumeChange(value)}
         defaultValue={30}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"

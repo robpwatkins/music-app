@@ -1,23 +1,44 @@
 import React from 'react';
 import OnlineCard from './OnlineCard';
-import VolumeCard from './VolumCard';
+import VolumeCard from './VolumeCard';
 import SoundCard from './SoundCard';
 import { Grid } from '@material-ui/core';
 
 class Dashboard extends React.Component {
+  state = {
+    online: true,
+    volume: 30,
+    soundQuality: 2,
+  }
+
+  toggleSwitch = () => {
+    this.setState({ online: !this.state.online });
+  }
+
+  volumeChange = (props) => {
+    console.log(props);
+  }
+
+  dropdownChange = props => {
+    this.setState({ soundQuality: props.target.value })
+    if (this.state.soundQuality === 3) {
+      console.log('heyoo');
+    }
+  }
+
   render() {
     return (
       <div style={{maxWidth: '850px', margin: '25px'}}>
         <h2 style={{color: 'gray'}}>Welcome, User!</h2>
         <Grid container direction="row" spacing={6} justify="center" style={{padding: '10px'}}>
           <Grid item xs={8} sm={4}>
-            <OnlineCard />
+            <OnlineCard toggleSwitch={this.toggleSwitch}/>
           </Grid>
           <Grid item xs={8} sm={4}>
-            <VolumeCard />
+            <VolumeCard volumeChange={this.volumeChange}/>
           </Grid>
           <Grid item xs={8} sm={4}>
-            <SoundCard />
+            <SoundCard dropdownChange={this.dropdownChange} soundQuality={this.state.soundQuality}/>
           </Grid>
         </Grid>
         <h3>System notifications:</h3>

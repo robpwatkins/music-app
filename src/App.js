@@ -6,7 +6,7 @@ import Dashboard from './Dashboard';
 
 class App extends React.Component {
   state = {
-    loggedIn: false,
+    loggedIn: true,
     username: ''
   }
 

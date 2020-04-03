@@ -8,16 +8,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-class SoundCard extends React.Component {
-  state = {
-    quality: 2
-  }
+function SoundCard (props) {
 
-  handleChange = event => {
-    this.setState({ quality: event.target.value })
-  }
-
-  render () {
     return (
       <Card style={{padding: '10px 0px'}}>
         <CardHeader title="Sound Quality" style={{paddingBottom: '0'}} />
@@ -28,7 +20,7 @@ class SoundCard extends React.Component {
         </CardContent>
         <CardActions>
           <FormControl fullWidth>
-            <Select onChange={this.handleChange} value={this.state.quality}>
+            <Select onChange={event => props.dropdownChange(event)} value={props.soundQuality}>
               <MenuItem value={1}>Low</MenuItem>
               <MenuItem value={2}>Normal</MenuItem>
               <MenuItem value={3}>High</MenuItem>
@@ -37,7 +29,6 @@ class SoundCard extends React.Component {
         </CardActions>
       </Card>
     );
-  }
 }
 
 export default SoundCard;

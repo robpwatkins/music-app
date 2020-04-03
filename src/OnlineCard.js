@@ -7,7 +7,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
-function OnlineCard () {
+function OnlineCard (props) {
 
   return (
     <Card style={{padding: '10px 0px 3px 0px'}}>
@@ -21,7 +21,7 @@ function OnlineCard () {
         <FormControlLabel
           style={{paddingLeft: '5px'}}
           control={
-            <Switch />
+            <Switch onChange={props.toggleSwitch}/>
           }
         />
       </CardActions>
