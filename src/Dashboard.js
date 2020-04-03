@@ -3,12 +3,14 @@ import OnlineCard from './OnlineCard';
 import VolumeCard from './VolumeCard';
 import SoundCard from './SoundCard';
 import { Grid } from '@material-ui/core';
+import Notifications from './Notifications';
 
 class Dashboard extends React.Component {
   state = {
     online: true,
     volume: 30,
     soundQuality: 2,
+    notifications: []
   }
 
   toggleSwitch = () => {
@@ -24,6 +26,14 @@ class Dashboard extends React.Component {
     this.setState(( {soundQuality: props }), () => {
       console.log(`Sound Quality: ${this.state.soundQuality}`);
     })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.online && this.state.online) {
+      this.setState(( {notifications: [...this.state.notifications, 'Offline!'] }), () => {
+      });
+      console.log(this.state.notifications);
+    }
   }
 
   render() {
@@ -42,6 +52,7 @@ class Dashboard extends React.Component {
           </Grid>
         </Grid>
         <h3>System notifications:</h3>
+        <Notifications />
       </div>
     )
   }
