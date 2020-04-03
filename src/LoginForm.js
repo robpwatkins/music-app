@@ -9,7 +9,6 @@ function LoginForm (props) {
           <Input 
             fullWidth 
             placeholder="Username *"
-            onChange={event => props.updateusername(event)}
             ></Input>
           <br/>
           <Input type="password" fullWidth placeholder="Password *"></Input>

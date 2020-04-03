@@ -6,7 +6,7 @@ import Dashboard from './Dashboard';
 
 class App extends React.Component {
   state = {
-    loggedIn: true,
+    loggedIn: false,
     username: ''
   }
 
@@ -26,19 +26,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        {this.state.loggedIn ||
+        {!this.state.loggedIn ? (
           <LoginForm 
           onlogin={this.onLogin} 
-          loggedin={this.state.loggedIn}
-          updateusername={this.updateUsername}
           />
-        }
-        {this.state.loggedIn &&
+        ):(
           <Dashboard 
-          loggedin={this.state.loggedIn}
-          username={this.state.username}
           />
-        }
+        )}
       </div>
     );
   }

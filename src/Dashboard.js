@@ -23,7 +23,7 @@ class Dashboard extends React.Component {
       this.setState({
         notifications: [...this.state.notifications, 
           // "Listening to music at a high volume could cause long-term hearing loss."]
-          "Too loud!"]
+          "It's too loud!"]
       });
     })
   }
@@ -34,7 +34,7 @@ class Dashboard extends React.Component {
       this.setState({
         notifications: [...this.state.notifications,
         // "Music quality is degraded. Increase quality if your connection allows it."]
-        "Increase quality!"]
+        "Increase that quality!"]
       })
     })
   }
@@ -45,7 +45,7 @@ class Dashboard extends React.Component {
     this.setState({
         notifications: [...this.state.notifications,
         //  "Your application is offline. You won't be able to share or stream music to other devices."]
-        "You're offline!"] 
+        "Get online!"] 
     });
   }
 
