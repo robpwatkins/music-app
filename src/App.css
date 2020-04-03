@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.scrollBox {
+.scrollContainer {
   height: 25vh;
   overflow: scroll;
 }

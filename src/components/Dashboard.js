@@ -2,8 +2,8 @@ import React from 'react';
 import OnlineCard from './OnlineCard';
 import VolumeCard from './VolumeCard';
 import SoundCard from './SoundCard';
-import { Grid } from '@material-ui/core';
 import Notifications from './Notifications';
+import Grid from '@material-ui/core/Grid';
 
 class Dashboard extends React.Component {
   state = {

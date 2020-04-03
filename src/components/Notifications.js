@@ -2,7 +2,7 @@ import React from 'react';
 
 function Notifications (props) {
   return (
-    <div className="scrollBox">
+    <div className="scrollContainer">
       <div className="notificationContainer">
         {props.notifications.map((notification, i) => {
           return (
