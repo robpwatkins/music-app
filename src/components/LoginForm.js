@@ -5,21 +5,24 @@ import Input from '@material-ui/core/Input';
 function LoginForm (props) {
     return (
       <div style={{width: '35%', paddingTop: '55px'}}>
-        <form onSubmit={event => props.onlogin(event)}>
+        <form onSubmit={event => props.onLogin(event)}>
           <Input 
             fullWidth 
-            placeholder="Username *"
-            ></Input>
+            placeholder="Username *">
+          </Input>
           <br/>
-          <Input type="password" fullWidth placeholder="Password *"></Input>
+          <Input 
+            type="password" 
+            fullWidth 
+            placeholder="Password *">
+          </Input>
           <br/>
           <Button 
             type="submit" 
+            fullWidth
             style={{marginTop: '15px'}} 
-            fullWidth 
             color="primary" 
-            variant="contained"
-            >
+            variant="contained">
             Submit
           </Button>
         </form>

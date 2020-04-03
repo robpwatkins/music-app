@@ -29,7 +29,7 @@ class Dashboard extends React.Component {
   }
 
   dropdownChange = props => {
-    this.setState(( {soundQuality: props }), () => {
+    this.setState(({ soundQuality: props }), () => {
       this.state.soundQuality === 1 &&
       this.setState({
         notifications: [...this.state.notifications,

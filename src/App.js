@@ -1,25 +1,19 @@
 import React from 'react';
 import './App.css';
-import Header from './Header';
-import LoginForm from './LoginForm';
-import Dashboard from './Dashboard';
+import Header from './components/Header';
+import LoginForm from './components/LoginForm';
+import Dashboard from './components/Dashboard';
 
 class App extends React.Component {
   state = {
     loggedIn: false,
-    username: ''
   }
 
   onLogin = props => {
     props.preventDefault();
     this.setState({ 
       loggedIn: true,
-      username: props.target.value
      });
-  }
-
-  updateUsername = props => {
-    this.setState({ username: props.target.value });
   }
 
   render() {
@@ -28,11 +22,10 @@ class App extends React.Component {
         <Header />
         {!this.state.loggedIn ? (
           <LoginForm 
-          onlogin={this.onLogin} 
+          onLogin={this.onLogin} 
           />
         ):(
-          <Dashboard 
-          />
+          <Dashboard />
         )}
       </div>
     );
