@@ -21,10 +21,9 @@ class Dashboard extends React.Component {
   }
 
   dropdownChange = props => {
-    console.log(`props: ${props}`);
-    // const quality = props.target.value;
-    this.setState({ soundQuality: props })
-    console.log(`Sound Quality: ${this.state.soundQuality}`);
+    this.setState(( {soundQuality: props }), () => {
+      console.log(`Sound Quality: ${this.state.soundQuality}`);
+    })
   }
 
   render() {

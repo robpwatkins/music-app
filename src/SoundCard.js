@@ -20,7 +20,7 @@ function SoundCard (props) {
         </CardContent>
         <CardActions>
           <FormControl fullWidth>
-            <Select onChange={event => props.dropdownChange(event.target.value)} value=''>
+            <Select onChange={event => props.dropdownChange(event.target.value)} value={props.soundQuality}>
               <MenuItem value={1}>Low</MenuItem>
               <MenuItem value={2}>Normal</MenuItem>
               <MenuItem value={3}>High</MenuItem>
